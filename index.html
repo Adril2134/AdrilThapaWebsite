@@ -1392,12 +1392,12 @@
             <a href="#" class="logo">Adril Thapa</a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#projects">Projects</a>
                 <a href="#recent" style="position: relative;">
-                        Recent 
-                        <span class="new-badge">New</span>
-                    </a>
+                    Recent 
+                    <span class="new-badge">New</span>
+                </a>
                 <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
             <button class="mobile-menu-btn">
@@ -1451,93 +1451,177 @@
             </div>
         </div>
     </section>
+    <!-- Recent Works Section -->
+    <section class="section" id="recent">
+        <div class="section-title">
+            <h2>Recent Works</h2>
+        </div>
 
+        <div class="scada-container">
+            <h3 style="text-align: center; margin-bottom: 1rem; color: var(--primary);">Industrial SCADA Demonstration</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #475569;">
+                Interactive simulation of a water treatment plant SCADA system demonstrating real-time monitoring, control logic, 
+                and data visualization - showcasing skills applicable to industrial automation.
+            </p>
+
+            <!-- SCADA System Dashboard -->
+            <div class="scada-dashboard">
+                <!-- Process Visualization -->
+                <div class="process-diagram">
+                    <div class="water-tank" id="tank1">
+                        <div class="water-fill" style="height:65%;"></div>
+                        <div class="tank-label">Raw Water<br>Tank 1</div>
+                        <div class="tank-level">65%</div>
+                    </div>
+                    
+                    <div class="pump" id="pump1">
+                        <i class="fas fa-tint"></i>
+                        <div class="pump-status">OFF</div>
+                    </div>
+                    
+                    <div class="valve" id="valve1">
+                        <i class="fas fa-toggle-off"></i>
+                        <div class="valve-status">Closed</div>
+                    </div>
+                    
+                    <div class="treatment-plant">
+                        <i class="fas fa-filter"></i>
+                        <div>Treatment</div>
+                    </div>
+                    
+                    <div class="water-tank" id="tank2">
+                        <div class="water-fill" style="height:30%;"></div>
+                        <div class="tank-label">Clean Water<br>Tank 2</div>
+                        <div class="tank-level">30%</div>
+                    </div>
+                </div>
+                
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <h4>System Controls</h4>
+                    <div class="control-group">
+                        <button class="control-btn" id="ctrl-pump1">
+                            <i class="fas fa-power-off"></i> Pump 1
+                        </button>
+                        <button class="control-btn" id="ctrl-valve1">
+                            <i class="fas fa-toggle-off"></i> Inlet Valve
+                        </button>
+                    </div>
+                    
+                    <div class="alarm-panel">
+                        <h4>System Alarms</h4>
+                        <div class="alarm" id="alarm-low">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Tank 1 Low Level</span>
+                        </div>
+                        <div class="alarm" id="alarm-high">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Tank 2 High Level</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Visualization -->
+                <div class="data-panel">
+                    <h4>Process Trends</h4>
+                    <div class="trend-chart" id="trend-chart">
+                        <canvas id="scada-trend" height="200"></canvas>
+                    </div>
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span>Tank 1 Level</span>
+                            <span id="data-tank1">65%</span>
+                        </div>
+                        <div class="data-item">
+                            <span>Tank 2 Level</span>
+                            <span id="data-tank2">30%</span>
+                        </div>
+                        <div class="data-item">
+                            <span>Flow Rate</span>
+                            <span id="data-flow">0 L/min</span>
+                        </div>
+                        <div class="data-item">
+                            <span>System Status</span>
+                            <span id="data-status">Standby</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- System Explanation -->
+            <div class="scada-explanation">
+                <h4>How This SCADA System Works</h4>
+                <ul>
+                    <li><strong>Real-time Monitoring:</strong> Continuous tracking of water levels, flow rates, and equipment status</li>
+                    <li><strong>Control Logic:</strong> Automated pump/valve control based on tank levels with manual override</li>
+                    <li><strong>Alarm Management:</strong> Visual alerts for abnormal conditions (high/low levels)</li>
+                    <li><strong>Data Visualization:</strong> Historical trend display for process analysis</li>
+                    <li><strong>Industrial Protocols:</strong> Simulates Modbus/TCP communication between devices</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <!-- Experience Section -->
     <section class="section" id="experience">
         <div class="section-title">
             <h2>My Experience</h2>
         </div>
-        <div class="experience-container">
-            <!-- Yarsa Tech -->
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3 class="experience-title">Electronics Intern</h3>
-                    <span class="experience-date">2023 - Present</span>
-                </div>
-                <div class="experience-content">
-                    <div class="experience-main">
-                        <div class="experience-company">
-                            <i class="fas fa-building"></i>
-                            <span>Yarsa Tech, Pokhara</span>
-                        </div>
-                        <div class="experience-text-section">
-                            <p class="experience-description">
-                                Worked at Nepal's pioneering electronics manufacturing company, gaining hands-on experience with production processes, quality control, and industrial-grade components.
-                            </p>
-                            <div class="experience-skills">
-                                <span class="experience-skill">PCB Assembly</span>
-                                <span class="experience-skill">Quality Testing</span>
-                                <span class="experience-skill">Production Processes</span>
-                                <span class="experience-skill">Industrial Electronics</span>
-                            </div>
-                        </div>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Electronics Intern</h3>
+                    <div class="project-meta">
+                        <span class="project-date">May 2025 - Present</span>
+                        <span class="project-company"> Yarsa Tech, Pokhara</span>
+                    </div>
+                    <p>Worked at Nepal's pioneering electronics manufacturing company, gaining hands-on experience with production processes, quality control, and industrial-grade components.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PCB Assembly</span>
+                        <span class="project-tag">Quality Testing</span>
+                        <span class="project-tag">Production Processes</span>
+                        <span class="project-tag">Industrial Electronics</span>
                     </div>
                 </div>
-            </div>
-
+            </div><br>
             <!-- Team Urja - Captain -->
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3 class="experience-title">Team Captain</h3>
-                    <span class="experience-date">May 2024 - February 2025</span>
-                </div>
-                <div class="experience-content">
-                    <div class="experience-main">
-                        <div class="experience-company">
-                            <i class="fas fa-users"></i>
-                            <span>Team Urja, Kathmandu University</span>
-                        </div>
-                        <div class="experience-text-section">
-                            <p class="experience-description">
-                                Leading Nepal's first Formula Student team in building an electric Formula-3 racing vehicle. Managing technical development, team coordination, and competition preparation and sucessfully participated in Formula Bharat 2024 in Formula Bharat 2025.
-                            </p>
-                            <div class="experience-skills">
-                                <span class="experience-skill">Team Leadership</span>
-                                <span class="experience-skill">EV Systems</span>
-                                <span class="experience-skill">Project Management</span>
-                                <span class="experience-skill">Technical Coordination</span>
-                            </div>
-                        </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Team Captain</h3>
+                    <div class="project-meta">
+                        <span class="project-date">May 2024 - February 2025</span>
+                        <span class="project-company">Team Urja, Kathmandu University</span>
+                    </div>
+                    <p>Leading Nepal's first Formula Student team in building an electric Formula-3 racing vehicle. Managing technical development, team coordination, and competition preparation and successfully participated in Formula Bharat 2024 in Formula Bharat 2025.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Team Leadership</span>
+                        <span class="project-tag">EV Systems</span>
+                        <span class="project-tag">Project Management</span>
+                        <span class="project-tag">Technical Coordination</span>
                     </div>
                 </div>
             </div>
 
+       <br>
             <!-- Team Urja - Member -->
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3 class="experience-title">Electrical Technical Member</h3>
-                    <span class="experience-date">June 2023 - April 2024</span>
-                </div>
-                <div class="experience-content">
-                    <div class="experience-main">
-                        <div class="experience-company">
-                            <i class="fas fa-car"></i>
-                            <span>Team Urja, Kathmandu University</span>
-                        </div>
-                        <div class="experience-text-section">
-                            <p class="experience-description">
-                                Contributed to building Nepal's first Formula-3 electric racing vehicle that competed in Formula Bharat 2024. Worked on electrical systems integration and vehicle control.
-                            </p>
-                            <div class="experience-skills">
-                                <span class="experience-skill">EV Systems</span>
-                                <span class="experience-skill">Embedded Controls</span>
-                                <span class="experience-skill">Power Distribution</span>
-                                <span class="experience-skill">Team Collaboration</span>
-                            </div>
-                        </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Electrical Technical Member</h3>
+                    <div class="project-meta">
+                        <span class="project-date">June 2023 - April 2024</span>
+                        <span class="project-company">Team Urja, Kathmandu University</span>
+                    </div>
+                    <p>Contributed to building Nepal's first Formula-3 electric racing vehicle that competed in Formula Bharat 2024. Worked on electrical systems integration and vehicle control.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">EV Systems</span>
+                        <span class="project-tag">Embedded Controls</span>
+                        <span class="project-tag">Power Distribution</span>
+                        <span class="project-tag">Team Collaboration</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Yarsa Tech -->
+ 
         </div>
     </section>
 
@@ -2018,116 +2102,7 @@
         </div>
     </div>
 
-    <!-- Recent Works Section -->
-    <section class="section" id="recent">
-        <div class="section-title">
-            <h2>Recent Works</h2>
-        </div>
 
-        <div class="scada-container">
-            <h3 style="text-align: center; margin-bottom: 1rem; color: var(--primary);">Industrial SCADA Demonstration</h3>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #475569;">
-                Interactive simulation of a water treatment plant SCADA system demonstrating real-time monitoring, control logic, 
-                and data visualization - showcasing skills applicable to industrial automation.
-            </p>
-
-            <!-- SCADA System Dashboard -->
-            <div class="scada-dashboard">
-                <!-- Process Visualization -->
-                <div class="process-diagram">
-                    <div class="water-tank" id="tank1">
-                        <div class="water-fill" style="height:65%;"></div>
-                        <div class="tank-label">Raw Water<br>Tank 1</div>
-                        <div class="tank-level">65%</div>
-                    </div>
-                    
-                    <div class="pump" id="pump1">
-                        <i class="fas fa-tint"></i>
-                        <div class="pump-status">OFF</div>
-                    </div>
-                    
-                    <div class="valve" id="valve1">
-                        <i class="fas fa-toggle-off"></i>
-                        <div class="valve-status">Closed</div>
-                    </div>
-                    
-                    <div class="treatment-plant">
-                        <i class="fas fa-filter"></i>
-                        <div>Treatment</div>
-                    </div>
-                    
-                    <div class="water-tank" id="tank2">
-                        <div class="water-fill" style="height:30%;"></div>
-                        <div class="tank-label">Clean Water<br>Tank 2</div>
-                        <div class="tank-level">30%</div>
-                    </div>
-                </div>
-                
-                <!-- Control Panel -->
-                <div class="control-panel">
-                    <h4>System Controls</h4>
-                    <div class="control-group">
-                        <button class="control-btn" id="ctrl-pump1">
-                            <i class="fas fa-power-off"></i> Pump 1
-                        </button>
-                        <button class="control-btn" id="ctrl-valve1">
-                            <i class="fas fa-toggle-off"></i> Inlet Valve
-                        </button>
-                    </div>
-                    
-                    <div class="alarm-panel">
-                        <h4>System Alarms</h4>
-                        <div class="alarm" id="alarm-low">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span>Tank 1 Low Level</span>
-                        </div>
-                        <div class="alarm" id="alarm-high">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span>Tank 2 High Level</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Data Visualization -->
-                <div class="data-panel">
-                    <h4>Process Trends</h4>
-                    <div class="trend-chart" id="trend-chart">
-                        <canvas id="scada-trend" height="200"></canvas>
-                    </div>
-                    <div class="data-grid">
-                        <div class="data-item">
-                            <span>Tank 1 Level</span>
-                            <span id="data-tank1">65%</span>
-                        </div>
-                        <div class="data-item">
-                            <span>Tank 2 Level</span>
-                            <span id="data-tank2">30%</span>
-                        </div>
-                        <div class="data-item">
-                            <span>Flow Rate</span>
-                            <span id="data-flow">0 L/min</span>
-                        </div>
-                        <div class="data-item">
-                            <span>System Status</span>
-                            <span id="data-status">Standby</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- System Explanation -->
-            <div class="scada-explanation">
-                <h4>How This SCADA System Works</h4>
-                <ul>
-                    <li><strong>Real-time Monitoring:</strong> Continuous tracking of water levels, flow rates, and equipment status</li>
-                    <li><strong>Control Logic:</strong> Automated pump/valve control based on tank levels with manual override</li>
-                    <li><strong>Alarm Management:</strong> Visual alerts for abnormal conditions (high/low levels)</li>
-                    <li><strong>Data Visualization:</strong> Historical trend display for process analysis</li>
-                    <li><strong>Industrial Protocols:</strong> Simulates Modbus/TCP communication between devices</li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <section class="section" id="yarsa-experience">
         <div class="section-title">
             <h2>Experience at Yarsa Tech</h2>
