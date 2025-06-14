@@ -1,0 +1,2966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adril Thapa | Electrical & Electronics Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #031846;
+            --secondary: #4f46e5;
+            --accent: #f59e0b;
+            --dark: #0c1016;
+            --light: #f8fafc;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/4dc3300e9fccc1edb016cc1d77067e1e.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section */
+        .section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-text h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: left;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background-color: #e0e7ff;
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Experience Section */
+        .experience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem 4rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+            width: 100%;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .experience-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .experience-main {
+            flex: 1;
+        }
+
+        .experience-text-section {
+            width: 100%;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .experience-date {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .experience-company i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            color: #475569;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .experience-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 200px;
+        }
+
+        .experience-image {
+            width: 200px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .experience-skill {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-skill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            background-color: var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: #f1f5f9;
+            padding: 6rem 5%;
+        }
+
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .projects-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .projects-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .projects-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .projects-carousel {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 2rem;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .projects-carousel::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .project-card {
+            min-width: 350px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.8rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .project-content p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background-color: #e0e7ff;
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Project Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background-color: white;
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .modal-section p {
+            color: #475569;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .modal-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-tech {
+            background-color: #e0e7ff;
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section Styles */
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .contact-item p, .contact-item a {
+            color: #64748b;
+            margin: 0;
+        }
+
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .resume-link:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .resume-link i {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-item {
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+       /* SCADA Nav Button Styling */
+.scada-nav-btn {
+    position: relative;
+    color: var(--primary);
+    font-weight: 600; /* Makes it stand out slightly */
+}
+
+.new-badge {
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    position: relative;
+    top: -0.1rem; /* Fine-tune badge alignment */
+    animation: pulse 2s infinite; /* Optional animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .section {
+                padding: 4rem 5%;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .project-card {
+                min-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .project-card {
+                min-width: 280px;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .modal-image {
+                height: 250px;
+            }
+        }
+
+        .scada-demo {
+            background: linear-gradient(135deg, rgba(2, 12, 27, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .scada-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .scada-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .scada-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+        }
+
+        .demo-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent);
+        }
+
+        .water-tank {
+            width: 200px;
+            height: 300px;
+            border: 4px solid #1e3a8a;
+            position: relative;
+            margin: 20px auto;
+            border-radius: 8px;
+            background: #f8fafc;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .water-tank::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: #1e3a8a;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .water-fill {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, #3b82f6, #60a5fa);
+            transition: height 0.5s ease;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .water-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .status-panel {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #1e293b;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .status-panel p {
+            margin: 12px 0;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .status-panel span {
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        #system-status {
+            font-weight: 600;
+            margin: 20px 0 !important;
+            padding: 12px;
+            border-radius: 6px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+
+        .explanation {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #1e3a8a;
+            color: #1e293b;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .explanation h4 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .explanation li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            padding-left: 5px;
+        }
+
+        .explanation strong {
+            color: #1e3a8a;
+        }
+
+        #toggle-pump {
+            width: 100%;
+            padding: 12px 24px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        #toggle-pump:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        #toggle-pump:active {
+            transform: translateY(0);
+        }
+
+        .scada-demo {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .demo-container {
+            background: #ffffff !important;
+            border-radius: 12px !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        /* SCADA Dashboard Styles */
+        .scada-dashboard {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .process-diagram {
+            grid-column: 1 / -1;
+            position: relative;
+            height: 300px;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .water-tank {
+            width: 120px;
+            height: 200px;
+            border: 3px solid var(--primary);
+            border-radius: 8px;
+            position: relative;
+            background: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .water-fill {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, #3b82f6, #60a5fa);
+            transition: height 0.5s ease;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .tank-label, .tank-level {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-top: 5px;
+        }
+
+        .tank-level {
+            font-weight: 600;
+            margin-top: auto;
+            padding-bottom: 10px;
+        }
+
+        .pump, .valve {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pump i, .valve i {
+            font-size: 2rem;
+            color: #64748b;
+        }
+
+        .pump.active i {
+            color: var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+
+        .valve.open i {
+            color: #10b981;
+        }
+
+        .pump-status, .valve-status {
+            font-size: 0.8rem;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .treatment-plant {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .treatment-plant i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .control-panel, .data-panel {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .control-panel h4, .data-panel h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .control-btn {
+            flex: 1;
+            padding: 0.8rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: #f1f5f9;
+        }
+
+        .control-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .alarm-panel {
+            margin-top: 1.5rem;
+        }
+
+        .alarm {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+    padding: 0.8rem;
+            background: white;
+            border-radius: 6px;
+    margin-bottom: 0.8rem;
+            border-left: 4px solid #e2e8f0;
+            transition: all 0.3s ease;
+    font-size: 0.9rem;
+        }
+
+        .alarm.active {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+    animation: pulseAlarm 1.5s infinite;
+        }
+
+        .alarm i {
+    font-size: 1.1rem;
+}
+
+.alarm i.fa-exclamation-triangle {
+            color: #ef4444;
+        }
+
+.alarm i.fa-check-circle {
+    color: #10b981;
+}
+
+@keyframes pulseAlarm {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.3); }
+    70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+        .trend-chart {
+            height: 200px;
+            margin-bottom: 1.5rem;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .data-item {
+            background: white;
+            padding: 0.8rem;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #e2e8f0;
+        }
+
+        .data-item span:first-child {
+            color: #64748b;
+        }
+
+        .data-item span:last-child {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .scada-explanation {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .scada-explanation h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .scada-explanation ul {
+            list-style-type: none;
+        }
+
+        .scada-explanation li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .scada-explanation li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .scada-dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-diagram {
+                height: auto;
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+            
+            .water-tank {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Add these styles to your existing CSS */
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .resume-link:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .resume-link i {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Adril Thapa</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#recent" style="position: relative;">
+                        Recent 
+                        <span class="new-badge">New</span>
+                    </a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Adril Thapa</h1>
+            <h2>Electrical & Electronics Engineer</h2>
+            <p>Specializing in communication systems with expertise in embedded systems, IoT, and PCB design. Passionate about creating innovative solutions that bridge hardware and software.</p>
+            <div class="cta-buttons" style="justify-content: center;">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Electrical and ElectronicsEngineer</h3>
+                <p>Freshly minted Electrical and Electronics Engineering graduate from Kathmandu University, now channeling my expertise in embedded systems and IoT toward industrial automation solutions. My final-year specialization in communication systems armed me with unique insights into data transmission protocols.</p>
+            
+                <p>At Yarsa Tech, Nepal's electronics manufacturing pioneer, I gained hands-on experience with production-grade hardware, quality testing protocols, and industrial reliability standards. </p>
+                
+              
+            
+                <p>As captain of Nepal's first Formula Student team, I led the electrical integration of a competitive EV prototype, mastering rapid prototyping, failure analysis, and cross-functional team coordination.</p>
+                <div class="skills-list">
+                    <span class="skill-tag">Embedded Systems</span>
+                    <span class="skill-tag">IoT</span>
+                    <span class="skill-tag">PCB Design</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">FPGA</span>
+                    <span class="skill-tag">ESP32</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">SCADA</span>
+                    <span class="skill-tag">EV Systems</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/AdrilThapa.jpg" alt="Adril Thapa">
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="section-title">
+            <h2>My Experience</h2>
+        </div>
+        <div class="experience-container">
+            <!-- Yarsa Tech -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Electronics Intern</h3>
+                    <span class="experience-date">2023 - Present</span>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-main">
+                        <div class="experience-company">
+                            <i class="fas fa-building"></i>
+                            <span>Yarsa Tech, Pokhara</span>
+                        </div>
+                        <div class="experience-text-section">
+                            <p class="experience-description">
+                                Worked at Nepal's pioneering electronics manufacturing company, gaining hands-on experience with production processes, quality control, and industrial-grade components.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="experience-skill">PCB Assembly</span>
+                                <span class="experience-skill">Quality Testing</span>
+                                <span class="experience-skill">Production Processes</span>
+                                <span class="experience-skill">Industrial Electronics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Urja - Captain -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Team Captain</h3>
+                    <span class="experience-date">May 2024 - February 2025</span>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-main">
+                        <div class="experience-company">
+                            <i class="fas fa-users"></i>
+                            <span>Team Urja, Kathmandu University</span>
+                        </div>
+                        <div class="experience-text-section">
+                            <p class="experience-description">
+                                Leading Nepal's first Formula Student team in building an electric Formula-3 racing vehicle. Managing technical development, team coordination, and competition preparation and sucessfully participated in Formula Bharat 2024 in Formula Bharat 2025.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="experience-skill">Team Leadership</span>
+                                <span class="experience-skill">EV Systems</span>
+                                <span class="experience-skill">Project Management</span>
+                                <span class="experience-skill">Technical Coordination</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Urja - Member -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Electrical Technical Member</h3>
+                    <span class="experience-date">June 2023 - April 2024</span>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-main">
+                        <div class="experience-company">
+                            <i class="fas fa-car"></i>
+                            <span>Team Urja, Kathmandu University</span>
+                        </div>
+                        <div class="experience-text-section">
+                            <p class="experience-description">
+                                Contributed to building Nepal's first Formula-3 electric racing vehicle that competed in Formula Bharat 2024. Worked on electrical systems integration and vehicle control.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="experience-skill">EV Systems</span>
+                                <span class="experience-skill">Embedded Controls</span>
+                                <span class="experience-skill">Power Distribution</span>
+                                <span class="experience-skill">Team Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="projects-container">
+            <div class="projects-title">
+                <h2>My Projects</h2>
+            </div>
+            <div class="projects-carousel">
+                <!-- Project 1: Health Monitoring System -->
+                <div class="project-card" data-project="1">
+                    <div class="project-image">
+                        <img src="images/Screenshot_20250614_103223_Gallery.jpg" alt="Health Monitoring System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Health Monitoring System</h3>
+                        <p>Designed for elderly and hospital patients to monitor heart rate, oxygen levels, and temperature with ESP32 processing and web dashboard.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">MAX30100</span>
+                            <span class="project-tag">MLX90614</span>
+                            <span class="project-tag">IoT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details" data-project="1"><i class="fas fa-info-circle"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Smart Water Tank SCADA -->
+                <div class="project-card" data-project="2">
+                    <div class="project-image">
+                        <img src="images/Smart Water Tank SCADA.png" alt="Water Tank SCADA System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Smart Water Tank SCADA</h3>
+                        <p>Industrial-inspired monitoring system with ESP32, ultrasonic sensor, and web HMI demonstrating core SCADA principles.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">SCADA</span>
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Web HMI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details" data-project="2"><i class="fas fa-info-circle"></i> View Details</a>
+                            <a href="#recent" class="view-details" onclick="document.getElementById('recent').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-play-circle"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Tomato Plant Disease Detection -->
+                <div class="project-card" data-project="3">
+                    <div class="project-image">
+                        <img src="images/Screenshot 2025-06-14 121354.png" alt="Tomato Plant Disease Detection">
+                    </div>
+                    <div class="project-content">
+                        <h3>Tomato Plant Disease Detection</h3>
+                        <p>CNN-based automated system for detecting and classifying plant diseases with web platform for diagnosis.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Web Integration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details" data-project="3"><i class="fas fa-info-circle"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Prosthetic Hand -->
+                <div class="project-card" data-project="4">
+                    <div class="project-image">
+                        <img src="images/Screenshot 2025-06-14 122425.png" alt="Prosthetic Hand">
+                    </div>
+                    <div class="project-content">
+                        <h3>Prosthetic Hand</h3>
+                        <p>EMG-based prosthetic hand control system using ESP32 microcontroller and signal processing techniques for precise movement control.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">EMG</span>
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">Signal Processing</span>
+                            <span class="project-tag">Biomedical</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details" data-project="4"><i class="fas fa-info-circle"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: EV Charging Monitoring -->
+                <div class="project-card" data-project="5">
+                    <div class="project-image">
+                        <img src="images/Screenshot 2025-06-14 040550.png" alt="EV Charging Monitoring System">
+                    </div>
+                    <div class="project-content">
+                        <h3>EV Charging Monitoring System</h3>
+                        <p>IoT-based system to monitor voltage, current, power, and energy during EV charging with real-time data tracking and fault detection.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Sensors</span>
+                            <span class="project-tag">Web Dashboard</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details" data-project="5"><i class="fas fa-info-circle"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Intercom System -->
+                <div class="project-card" data-project="7">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Intercom System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Intercom System</h3>
+                        <p>Wired full-duplex intercom system for hotels with noise filtering and multiplexed connections.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Analog Circuits</span>
+                            <span class="project-tag">LM386</span>
+                            <span class="project-tag">Bandpass Filter</span>
+                            <span class="project-tag">Multiplexing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details" data-project="7"><i class="fas fa-info-circle"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal 1: Health Monitoring System -->
+    <div class="modal" id="modal-1">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Health Monitoring System</h3>
+                <button class="close-modal">&times;</button>
+                    </div>
+            <div class="modal-body">
+                <img src="images/Screenshot_20250614_103223_Gallery.jpg" alt="Health Monitoring System" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Project Overview</h4>
+                    <p>Developed a comprehensive health monitoring system designed for elderly care and hospital patients. The system provides real-time monitoring of vital signs including heart rate, oxygen levels, and body temperature.</p>
+                    <p>The project focuses on providing accurate health metrics and timely alerts for medical professionals and caregivers.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <div class="modal-technologies">
+                        <span class="modal-tech">ESP32</span>
+                        <span class="modal-tech">MAX30100</span>
+                        <span class="modal-tech">MLX90614</span>
+                        <span class="modal-tech">IoT</span>
+                        <span class="modal-tech">Web Dashboard</span>
+                    </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time vital signs monitoring</li>
+                        <li>Web-based dashboard for data visualization</li>
+                        <li>Alert system for abnormal readings</li>
+                        <li>Data logging and historical analysis</li>
+                        <li>Mobile-friendly interface</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Implementation Details</h4>
+                    <p><strong>Hardware Components:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>ESP32 microcontroller</li>
+                        <li>MAX30100 pulse oximeter sensor</li>
+                        <li>MLX90614 temperature sensor</li>
+                        <li>Power management system</li>
+                    </ul>
+                    
+                    <p><strong>Software Implementation:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time data processing</li>
+                        <li>Web dashboard development</li>
+                        <li>Alert system implementation</li>
+                        <li>Data storage and analysis</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+                </div>
+
+    <!-- Modal 2: Smart Water Tank SCADA -->
+    <div class="modal" id="modal-2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Smart Water Tank SCADA System</h3>
+                <button class="close-modal">&times;</button>
+                    </div>
+            <div class="modal-body">
+                <img src="images/Smart Water Tank SCADA.png" alt="Smart Water Tank SCADA" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Project Overview</h4>
+                    <p>Developed a comprehensive SCADA (Supervisory Control and Data Acquisition) system for industrial water tanks. The system provides real-time monitoring, automated control, and intelligent alarm management for water storage and distribution systems.</p>
+                    <p>The project focuses on ensuring efficient water management, preventing overflow situations, and maintaining optimal water levels through automated pump control and real-time monitoring.</p>
+            </div>
+
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <div class="modal-technologies">
+                        <span class="modal-tech">SCADA</span>
+                        <span class="modal-tech">IoT</span>
+                        <span class="modal-tech">Automation</span>
+                        <span class="modal-tech">Monitoring</span>
+                        <span class="modal-tech">Control Systems</span>
+                </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time water level monitoring</li>
+                        <li>Automated pump control system</li>
+                        <li>Intelligent alarm management</li>
+                        <li>Historical data logging and analysis</li>
+                        <li>Remote monitoring and control capabilities</li>
+                    </ul>
+            </div>
+
+                <div class="modal-section">
+                    <h4>Implementation Details</h4>
+                    <p><strong>Hardware Components:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Water level sensors</li>
+                        <li>Control valves and pumps</li>
+                        <li>Industrial PLCs</li>
+                        <li>Communication modules</li>
+                    </ul>
+                    
+                    <p><strong>Software Implementation:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time monitoring interface</li>
+                        <li>Automated control algorithms</li>
+                        <li>Alarm management system</li>
+                        <li>Data logging and analytics</li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Modal 5: EV Charging Monitoring -->
+    <div class="modal" id="modal-5">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>EV Charging Monitoring System</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="images/Screenshot 2025-06-14 040550.png" alt="EV Charging Monitoring System" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Project Overview</h4>
+                    <p>Developed an advanced monitoring system for electric vehicle charging stations. The system provides real-time tracking of charging parameters and ensures safe and efficient charging operations.</p>
+                    <p>The project focuses on providing comprehensive monitoring of charging parameters and early detection of potential issues.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <div class="modal-technologies">
+                        <span class="modal-tech">ESP32</span>
+                        <span class="modal-tech">IoT</span>
+                        <span class="modal-tech">Sensors</span>
+                        <span class="modal-tech">Web Dashboard</span>
+                        <span class="modal-tech">Monitoring</span>
+                    </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time voltage and current monitoring</li>
+                        <li>Power and energy consumption tracking</li>
+                        <li>Fault detection and alerts</li>
+                        <li>Charging session management</li>
+                        <li>Data analytics and reporting</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Implementation Details</h4>
+                    <p><strong>Hardware Components:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>ESP32 microcontroller</li>
+                        <li>Current and voltage sensors</li>
+                        <li>Power measurement modules</li>
+                        <li>Communication interfaces</li>
+                    </ul>
+                    
+                    <p><strong>Software Implementation:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time data acquisition</li>
+                        <li>Web dashboard development</li>
+                        <li>Alert system implementation</li>
+                        <li>Data analysis and reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7: Intercom System -->
+    <div class="modal" id="modal-7">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Intercom System</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Intercom System" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Project Overview</h4>
+                    <p>Designed a wired full-duplex intercom system for hotels. The system uses analog circuits and multiplexing techniques to handle multiple connections simultaneously, allowing for noise filtering and clear communication.</p>
+                    <p>The system is designed to be scalable and can be easily expanded to include more rooms or features.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <div class="modal-technologies">
+                        <span class="modal-tech">Analog Circuits</span>
+                        <span class="modal-tech">LM386</span>
+                        <span class="modal-tech">Bandpass Filter</span>
+                        <span class="modal-tech">Multiplexing</span>
+                    </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Noise filtering for clear communication</li>
+                        <li>Multiplexing for multiple connections</li>
+                        <li>Scalable design for future expansion</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Implementation Details</h4>
+                    <p><strong>Circuit Design:</strong> The system uses a combination of LM386 amplifiers and bandpass filters to handle multiple connections. The multiplexer IC is used to switch between different rooms, while the demultiplexer IC is used to distribute the signal to the corresponding room.</p>
+                    <p><strong>Software Integration:</strong> The system uses a microcontroller to control the multiplexer and demultiplexer ICs. The software is designed to handle multiple connections and switch between rooms based on the input signal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Tomato Plant Disease Detection -->
+    <div class="modal" id="modal-3">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tomato Plant Disease Detection</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="images/Screenshot 2025-06-14 121354.png" alt="Tomato Plant Disease Detection" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Project Overview</h4>
+                    <p>Developed an AI-powered system for detecting and classifying diseases in tomato plants using computer vision and deep learning techniques. The system provides real-time diagnosis and treatment recommendations for plant diseases.</p>
+                    <p>The project focuses on helping farmers identify plant diseases early and take appropriate measures to prevent crop loss.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <div class="modal-technologies">
+                        <span class="modal-tech">Machine Learning</span>
+                        <span class="modal-tech">CNN</span>
+                        <span class="modal-tech">Python</span>
+                        <span class="modal-tech">Web Integration</span>
+                        <span class="modal-tech">Computer Vision</span>
+                    </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time disease detection and classification</li>
+                        <li>Multiple disease type recognition</li>
+                        <li>Web-based interface for easy access</li>
+                        <li>Treatment recommendations</li>
+                        <li>Historical data tracking</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Implementation Details</h4>
+                    <p><strong>Model Development:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Custom CNN architecture for disease classification</li>
+                        <li>Dataset preparation and augmentation</li>
+                        <li>Model training and optimization</li>
+                        <li>Accuracy validation and testing</li>
+                    </ul>
+                    
+                    <p><strong>Web Platform:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>User-friendly interface for image upload</li>
+                        <li>Real-time processing and results display</li>
+                        <li>Treatment recommendations database</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Prosthetic Hand -->
+    <div class="modal" id="modal-4">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Prosthetic Hand Control System</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="images/Screenshot 2025-06-14 122425.png" alt="Prosthetic Hand" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Project Overview</h4>
+                    <p>Developed an advanced prosthetic hand control system using EMG (Electromyography) signals. The system is designed to help people in need of special medical care by providing intuitive control of prosthetic limbs through muscle signals.</p>
+                    <p>The project focuses on extracting and processing EMG signals from forearm muscles to control the movement of a prosthetic hand, making it more accessible and user-friendly for amputees.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <div class="modal-technologies">
+                        <span class="modal-tech">EMG</span>
+                        <span class="modal-tech">ESP32</span>
+                        <span class="modal-tech">Signal Processing</span>
+                        <span class="modal-tech">Band Pass Filter</span>
+                        <span class="modal-tech">Biomedical</span>
+                        <span class="modal-tech">Control Systems</span>
+                    </div>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Real-time EMG signal acquisition and processing</li>
+                        <li>Precise movement control through muscle signals</li>
+                        <li>Custom band-pass filtering for signal clarity</li>
+                        <li>Low-latency response system</li>
+                        <li>User-friendly calibration process</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>EMG Signal Processing</h4>
+                    <p><strong>Signal Acquisition:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Surface electrodes placed on forearm muscles</li>
+                        <li>Raw EMG signal sampling at high frequency</li>
+                        <li>Amplification and conditioning of weak signals</li>
+                        <li>Noise reduction through hardware filtering</li>
+                    </ul>
+                    
+                    <p><strong>Signal Processing:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Band-pass filtering to isolate relevant frequency ranges</li>
+                        <li>Signal rectification and envelope detection</li>
+                        <li>Feature extraction for movement classification</li>
+                        <li>Real-time signal analysis and pattern recognition</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Implementation Details</h4>
+                    <p><strong>Hardware Components:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>ESP32 microcontroller for signal processing</li>
+                        <li>EMG electrodes for signal acquisition</li>
+                        <li>Signal conditioning circuit</li>
+                        <li>Motor control system for hand movement</li>
+                    </ul>
+                    
+                    <p><strong>Software Implementation:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #475569;">
+                        <li>Custom signal processing algorithms</li>
+                        <li>Movement pattern recognition system</li>
+                        <li>Calibration and training interface</li>
+                        <li>Real-time control feedback system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Works Section -->
+    <section class="section" id="recent">
+        <div class="section-title">
+            <h2>Recent Works</h2>
+        </div>
+
+        <div class="scada-container">
+            <h3 style="text-align: center; margin-bottom: 1rem; color: var(--primary);">Industrial SCADA Demonstration</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #475569;">
+                Interactive simulation of a water treatment plant SCADA system demonstrating real-time monitoring, control logic, 
+                and data visualization - showcasing skills applicable to industrial automation.
+            </p>
+
+            <!-- SCADA System Dashboard -->
+            <div class="scada-dashboard">
+                <!-- Process Visualization -->
+                <div class="process-diagram">
+                    <div class="water-tank" id="tank1">
+                        <div class="water-fill" style="height:65%;"></div>
+                        <div class="tank-label">Raw Water<br>Tank 1</div>
+                        <div class="tank-level">65%</div>
+                    </div>
+                    
+                    <div class="pump" id="pump1">
+                        <i class="fas fa-tint"></i>
+                        <div class="pump-status">OFF</div>
+                    </div>
+                    
+                    <div class="valve" id="valve1">
+                        <i class="fas fa-toggle-off"></i>
+                        <div class="valve-status">Closed</div>
+                    </div>
+                    
+                    <div class="treatment-plant">
+                        <i class="fas fa-filter"></i>
+                        <div>Treatment</div>
+                    </div>
+                    
+                    <div class="water-tank" id="tank2">
+                        <div class="water-fill" style="height:30%;"></div>
+                        <div class="tank-label">Clean Water<br>Tank 2</div>
+                        <div class="tank-level">30%</div>
+                    </div>
+                </div>
+                
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <h4>System Controls</h4>
+                    <div class="control-group">
+                        <button class="control-btn" id="ctrl-pump1">
+                            <i class="fas fa-power-off"></i> Pump 1
+                        </button>
+                        <button class="control-btn" id="ctrl-valve1">
+                            <i class="fas fa-toggle-off"></i> Inlet Valve
+                        </button>
+                    </div>
+                    
+                    <div class="alarm-panel">
+                        <h4>System Alarms</h4>
+                        <div class="alarm" id="alarm-low">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Tank 1 Low Level</span>
+                        </div>
+                        <div class="alarm" id="alarm-high">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Tank 2 High Level</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Visualization -->
+                <div class="data-panel">
+                    <h4>Process Trends</h4>
+                    <div class="trend-chart" id="trend-chart">
+                        <canvas id="scada-trend" height="200"></canvas>
+                    </div>
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span>Tank 1 Level</span>
+                            <span id="data-tank1">65%</span>
+                        </div>
+                        <div class="data-item">
+                            <span>Tank 2 Level</span>
+                            <span id="data-tank2">30%</span>
+                        </div>
+                        <div class="data-item">
+                            <span>Flow Rate</span>
+                            <span id="data-flow">0 L/min</span>
+                        </div>
+                        <div class="data-item">
+                            <span>System Status</span>
+                            <span id="data-status">Standby</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- System Explanation -->
+            <div class="scada-explanation">
+                <h4>How This SCADA System Works</h4>
+                <ul>
+                    <li><strong>Real-time Monitoring:</strong> Continuous tracking of water levels, flow rates, and equipment status</li>
+                    <li><strong>Control Logic:</strong> Automated pump/valve control based on tank levels with manual override</li>
+                    <li><strong>Alarm Management:</strong> Visual alerts for abnormal conditions (high/low levels)</li>
+                    <li><strong>Data Visualization:</strong> Historical trend display for process analysis</li>
+                    <li><strong>Industrial Protocols:</strong> Simulates Modbus/TCP communication between devices</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="yarsa-experience">
+        <div class="section-title">
+            <h2>Experience at Yarsa Tech</h2>
+        </div>
+        <p style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.8; color: #475569; text-align: center;">
+            During my internship at Nepal's pioneering electronics manufacturing company, I contributed to various aspects of production and quality control.
+        </p>
+        <div class="projects-container">
+            <div class="projects-carousel">
+                <!-- PCB Assembly Card -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Screenshot 2025-06-14 032035.png" alt="PCB Designing">
+                    </div>
+                    <div class="project-content">
+                        <h3>PCB Designing</h3>
+                        <p>Hands-on experience with PCB design and layout using industry-standard tools, ensuring optimal component placement and signal integrity.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PCB Design</span>
+                            <span class="project-tag">Layout</span>
+                            <span class="project-tag">Signal Integrity</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Quality Testing Card -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Isometric_custom_1e91d52.jpg" alt="Dynamic QR Simulator">
+                    </div>
+                    <div class="project-content">
+                        <h3>Dynamic QR Simulator</h3>
+                        <p>Developed a simulator for testing and validating QR code generation and scanning functionality in POS systems, ensuring reliable transaction processing.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">QR Code</span>
+                            <span class="project-tag">Testing</span>
+                            <span class="project-tag">POS Systems</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://yarsa.tech/projects/nizi-pos/b30-simulator" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Industrial Electronics Card -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Industrial Electronics">
+                    </div>
+                    <div class="project-content">
+                        <h3>Industrial Electronics</h3>
+                        <p>Worked with industrial-grade components and systems, gaining practical knowledge of manufacturing standards and requirements.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Industrial</span>
+                            <span class="project-tag">Components</span>
+                            <span class="project-tag">Standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    /* SCADA Dashboard Styles */
+    .scada-dashboard {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .process-diagram {
+        grid-column: 1 / -1;
+        position: relative;
+        height: 300px;
+        background: #f8fafc;
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid #e2e8f0;
+    }
+
+    .water-tank {
+        width: 120px;
+        height: 200px;
+        border: 3px solid var(--primary);
+        border-radius: 8px;
+        position: relative;
+        background: #f1f5f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .water-fill {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(to top, #3b82f6, #60a5fa);
+        transition: height 0.5s ease;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .tank-label, .tank-level {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--dark);
+        margin-top: 5px;
+    }
+
+    .tank-level {
+        font-weight: 600;
+        margin-top: auto;
+        padding-bottom: 10px;
+    }
+
+    .pump, .valve {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .pump i, .valve i {
+        font-size: 2rem;
+        color: #64748b;
+    }
+
+    .pump.active i {
+        color: var(--accent);
+        animation: pulse 1.5s infinite;
+    }
+
+    .valve.open i {
+        color: #10b981;
+    }
+
+    .pump-status, .valve-status {
+        font-size: 0.8rem;
+        background: #e2e8f0;
+        padding: 2px 8px;
+        border-radius: 10px;
+    }
+
+    .treatment-plant {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .treatment-plant i {
+        font-size: 2.5rem;
+        color: var(--primary);
+    }
+
+    .control-panel, .data-panel {
+        background: #f8fafc;
+        border-radius: 8px;
+        padding: 1.5rem;
+        border: 1px solid #e2e8f0;
+    }
+
+    .control-panel h4, .data-panel h4 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+    }
+
+    .control-group {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .control-btn {
+        flex: 1;
+        padding: 0.8rem;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .control-btn:hover {
+        background: #f1f5f9;
+    }
+
+    .control-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+    .alarm-panel {
+        margin-top: 1.5rem;
+    }
+
+    .alarm {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.6rem;
+        background: white;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+        border-left: 4px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .alarm.active {
+        border-left-color: #ef4444;
+        background: #fef2f2;
+    }
+
+    .alarm i {
+        color: #ef4444;
+    }
+
+    .trend-chart {
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+
+    .data-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .data-item {
+        background: white;
+        padding: 0.8rem;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #e2e8f0;
+    }
+
+    .data-item span:first-child {
+        color: #64748b;
+    }
+
+    .data-item span:last-child {
+        font-weight: 600;
+        color: var(--primary);
+    }
+
+    .scada-explanation {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary);
+    }
+
+    .scada-explanation h4 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .scada-explanation ul {
+        list-style-type: none;
+    }
+
+    .scada-explanation li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .scada-explanation li:before {
+        content: "•";
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+        .scada-dashboard {
+            grid-template-columns: 1fr;
+        }
+        
+        .process-diagram {
+            height: auto;
+            flex-direction: column;
+            padding: 1rem 0;
+        }
+        
+        .water-tank {
+            margin-bottom: 2rem;
+        }
+    }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // SCADA System Simulation
+    document.addEventListener('DOMContentLoaded', function() {
+        // System state
+        const scadaState = {
+            tank1Level: 65,
+            tank2Level: 30,
+            pump1Status: false,
+            valve1Status: false,
+            flowRate: 0,
+            alarms: {
+                tank1Low: false,
+                tank2High: false
+            }
+        };
+
+        // DOM elements
+        const elements = {
+            tank1Fill: document.querySelector('#tank1 .water-fill'),
+            tank1Level: document.querySelector('#tank1 .tank-level'),
+            tank2Fill: document.querySelector('#tank2 .water-fill'),
+            tank2Level: document.querySelector('#tank2 .tank-level'),
+            pump1: document.getElementById('pump1'),
+            pump1Status: document.querySelector('#pump1 .pump-status'),
+            valve1: document.getElementById('valve1'),
+            valve1Status: document.querySelector('#valve1 .valve-status'),
+            ctrlPump1: document.getElementById('ctrl-pump1'),
+            ctrlValve1: document.getElementById('ctrl-valve1'),
+            alarmLow: document.getElementById('alarm-low'),
+            alarmHigh: document.getElementById('alarm-high'),
+            dataTank1: document.getElementById('data-tank1'),
+            dataTank2: document.getElementById('data-tank2'),
+            dataFlow: document.getElementById('data-flow'),
+            dataStatus: document.getElementById('data-status')
+        };
+
+        // Initialize Chart.js
+        const ctx = document.getElementById('scada-trend').getContext('2d');
+        const trendChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array(20).fill(''),
+                datasets: [
+                    {
+                        label: 'Tank 1 Level',
+                        data: Array(20).fill(65),
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Tank 2 Level',
+                        data: Array(20).fill(30),
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        });
+
+        // Control button handlers
+        elements.ctrlPump1.addEventListener('click', function() {
+            scadaState.pump1Status = !scadaState.pump1Status;
+            updateSystem();
+        });
+
+        elements.ctrlValve1.addEventListener('click', function() {
+            scadaState.valve1Status = !scadaState.valve1Status;
+            updateSystem();
+        });
+
+        // System update function
+        function updateSystem() {
+            // Process logic
+            if (scadaState.pump1Status && scadaState.valve1Status && scadaState.tank1Level > 0) {
+                // Pump is moving water from Tank 1 to Tank 2
+                scadaState.flowRate = 5;
+                scadaState.tank1Level = Math.max(0, scadaState.tank1Level - 0.5);
+                scadaState.tank2Level = Math.min(100, scadaState.tank2Level + 0.5);
+            } else {
+                scadaState.flowRate = 0;
+                
+                // Natural slow transfer when valve is open
+                if (scadaState.valve1Status && scadaState.tank1Level > scadaState.tank2Level) {
+                    scadaState.tank1Level = Math.max(0, scadaState.tank1Level - 0.1);
+                    scadaState.tank2Level = Math.min(100, scadaState.tank2Level + 0.1);
+                }
+            }
+
+            // Check alarms
+            scadaState.alarms.tank1Low = scadaState.tank1Level < 20;
+            scadaState.alarms.tank2High = scadaState.tank2Level > 80;
+
+            // Update UI
+            updateUI();
+            
+            // Update chart
+            updateChart();
+        }
+
+        // Update UI elements
+        function updateUI() {
+            // Tank levels
+            elements.tank1Fill.style.height = `${scadaState.tank1Level}%`;
+            elements.tank1Level.textContent = `${Math.round(scadaState.tank1Level)}%`;
+            elements.tank2Fill.style.height = `${scadaState.tank2Level}%`;
+            elements.tank2Level.textContent = `${Math.round(scadaState.tank2Level)}%`;
+            
+            // Pump status
+            if (scadaState.pump1Status) {
+                elements.pump1.classList.add('active');
+                elements.pump1Status.textContent = 'ON';
+                elements.ctrlPump1.classList.add('active');
+                elements.ctrlPump1.innerHTML = '<i class="fas fa-power-off"></i> Stop Pump';
+            } else {
+                elements.pump1.classList.remove('active');
+                elements.pump1Status.textContent = 'OFF';
+                elements.ctrlPump1.classList.remove('active');
+                elements.ctrlPump1.innerHTML = '<i class="fas fa-power-off"></i> Start Pump';
+            }
+            
+            // Valve status
+            if (scadaState.valve1Status) {
+                elements.valve1.classList.add('open');
+                elements.valve1Status.textContent = 'Open';
+                elements.ctrlValve1.innerHTML = '<i class="fas fa-toggle-on"></i> Close Valve';
+                elements.ctrlValve1.classList.add('active');
+            } else {
+                elements.valve1.classList.remove('open');
+                elements.valve1Status.textContent = 'Closed';
+                elements.ctrlValve1.innerHTML = '<i class="fas fa-toggle-off"></i> Open Valve';
+                elements.ctrlValve1.classList.remove('active');
+            }
+            
+            // Alarms
+            if (scadaState.alarms.tank1Low) {
+                elements.alarmLow.classList.add('active');
+            } else {
+                elements.alarmLow.classList.remove('active');
+            }
+            
+            if (scadaState.alarms.tank2High) {
+                elements.alarmHigh.classList.add('active');
+            } else {
+                elements.alarmHigh.classList.remove('active');
+            }
+            
+            // Data panel
+            elements.dataTank1.textContent = `${Math.round(scadaState.tank1Level)}%`;
+            elements.dataTank2.textContent = `${Math.round(scadaState.tank2Level)}%`;
+            elements.dataFlow.textContent = `${scadaState.flowRate} L/min`;
+            
+            // System status
+            if (scadaState.pump1Status) {
+                elements.dataStatus.textContent = "Pumping";
+                elements.dataStatus.style.color = "#10b981";
+            } else if (scadaState.valve1Status) {
+                elements.dataStatus.textContent = "Gravity Flow";
+                elements.dataStatus.style.color = "#3b82f6";
+            } else {
+                elements.dataStatus.textContent = "Standby";
+                elements.dataStatus.style.color = "#64748b";
+            }
+        }
+
+        // Update trend chart
+        function updateChart() {
+            // Remove oldest data point
+            trendChart.data.datasets[0].data.shift();
+            trendChart.data.datasets[1].data.shift();
+            
+            // Add new data
+            trendChart.data.datasets[0].data.push(scadaState.tank1Level);
+            trendChart.data.datasets[1].data.push(scadaState.tank2Level);
+            
+            // Update chart
+            trendChart.update();
+        }
+
+        // Initialize system
+        updateUI();
+        
+        // Run simulation
+        setInterval(updateSystem, 1000);
+    });
+    </script>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>adrilthapa.official@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+977 9861934782</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Kathmandu, Nepal</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Resume</h3>
+                    <a href=https://drive.google.com/drive/folders/1LW7pMqnK7TT37ZSKsRtcY-ChH6bWxgSv?usp=drive_link">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">AD<span style="color: var(--accent);">RIL</span> THAPA</a><br><br>
+            <div class="footer-links"> 
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/adril-thapa" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/adril_thapa/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2023 Adril Thapa. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Project Modals
+        const modalTriggers = document.querySelectorAll('.view-details');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = trigger.getAttribute('data-project');
+                document.getElementById(`modal-${projectId}`).style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if(e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Animate elements when they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .projects-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Horizontal scrolling for projects with mouse drag
+        const carousel = document.querySelector('.projects-carousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+            carousel.style.cursor = 'grabbing';
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+            carousel.style.cursor = 'grab';
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+            carousel.style.cursor = 'grab';
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+
+        // SCADA Visualization Demo
+        const scadaVisualization = document.getElementById('scadaVisualization');
+        const demoButtons = {
+            startPump: document.getElementById('startPump'),
+            stopPump: document.getElementById('stopPump'),
+            openValve: document.getElementById('openValve'),
+            closeValve: document.getElementById('closeValve'),
+            viewTrends: document.getElementById('viewTrends')
+        };
+
+        // Simple SCADA visualization logic
+        function updateSCADAVisualization(action) {
+            let html = '';
+            
+            switch(action) {
+                case 'startPump':
+                    html = `
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;">
+                            <i class="fas fa-tint" style="font-size:3rem;color:#4f46e5;"></i>
+                            <p style="margin-top:1rem;font-weight:bold;">Pump Running</p>
+                            <p>Flow Rate: 120 L/min</p>
+                            <p>Pressure: 2.4 bar</p>
+                        </div>
+                    `;
+                    break;
+                case 'stopPump':
+                    html = `
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;">
+                            <i class="fas fa-tint" style="font-size:3rem;color:#64748b;"></i>
+                            <p style="margin-top:1rem;font-weight:bold;">Pump Stopped</p>
+                            <p>Flow Rate: 0 L/min</p>
+                            <p>Pressure: 0 bar</p>
+                        </div>
+                    `;
+                    break;
+                case 'openValve':
+                    html = `
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;">
+                            <div style="display:flex;justify-content:center;align-items:center;gap:2rem;">
+                                <div>
+                                    <i class="fas fa-tint" style="font-size:3rem;color:#4f46e5;"></i>
+                                    <p style="margin-top:1rem;">Tank 1</p>
+                                    <p>Level: 78%</p>
+                                </div>
+                                <i class="fas fa-arrow-right" style="font-size:2rem;color:white;"></i>
+                                <div>
+                                    <i class="fas fa-filter" style="font-size:3rem;color:#f59e0b;"></i>
+                                    <p style="margin-top:1rem;">Valve Open</p>
+                                    <p>Flow: 85 L/min</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'closeValve':
+                    html = `
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;">
+                            <div style="display:flex;justify-content:center;align-items:center;gap:2rem;">
+                                <div>
+                                    <i class="fas fa-tint" style="font-size:3rem;color:#4f46e5;"></i>
+                                    <p style="margin-top:1rem;">Tank 1</p>
+                                    <p>Level: 78%</p>
+                                </div>
+                                <i class="fas fa-arrow-right" style="font-size:2rem;color:#64748b;"></i>
+                                <div>
+                                    <i class="fas fa-filter" style="font-size:3rem;color:#64748b;"></i>
+                                    <p style="margin-top:1rem;">Valve Closed</p>
+                                    <p>Flow: 0 L/min</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'viewTrends':
+                    html = `
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;">
+                            <div style="background:rgba(255,255,255,0.1);padding:1rem;border-radius:5px;">
+                                <h3 style="color:white;margin-bottom:1rem;">Water Level Trends (Last 24 Hours)</h3>
+                                <div style="height:200px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);position:relative;">
+                                    <!-- Simple trend line -->
+                                    <div style="position:absolute;bottom:0;left:0;width:100%;height:80%;">
+                                        <div style="position:absolute;bottom:0;left:0;width:100%;height:1px;background:rgba(255,255,255,0.2);"></div>
+                                        <div style="position:absolute;bottom:0;left:0;width:100%;height:100%;display:flex;align-items:flex-end;">
+                                            <div style="height:30%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:45%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:60%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:75%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:65%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:50%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:70%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:85%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                            <div style="height:78%;width:20px;background:#4f46e5;margin-right:10px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                default:
+                    html = `
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;">
+                            <h3 style="margin-bottom:1rem;">Water Treatment Plant SCADA</h3>
+                            <p>Click buttons below to interact with the demo</p>
+                            <div style="display:flex;justify-content:center;gap:2rem;margin-top:2rem;">
+                                <div>
+                                    <i class="fas fa-tint" style="font-size:2rem;color:#4f46e5;"></i>
+                                    <p>Tank</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-filter" style="font-size:2rem;color:#f59e0b;"></i>
+                                    <p>Valve</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-chart-line" style="font-size:2rem;color:#f59e0b;"></i>
+                                    <p>Trends</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            }
+            
+            scadaVisualization.innerHTML = html;
+        }
+
+        // Add event listeners to demo buttons
+        Object.keys(demoButtons).forEach(key => {
+            demoButtons[key].addEventListener('click', () => {
+                updateSCADAVisualization(key);
+            });
+        });
+
+        // Initialize SCADA visualization
+        updateSCADAVisualization();
+    </script>
+</body>
+</html>
